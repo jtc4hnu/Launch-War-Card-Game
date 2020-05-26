@@ -1,0 +1,49 @@
+h1 {
+    font-size: 10vh;
+    flex-grow: 1;
+}
+
+img {
+
+}
+
+button {
+    background-color: #ffffff;
+    border-color: #aaaaaa;
+}
+button:hover {
+    background-color: #c5c5c5;
+}
+
+.CardGame-War {
+    min-height: 90%;
+    margin: 10px 50px;
+ 
+}
+.GameBoard {
+    min-height: 310px;
+    border: 5px solid burlywood;
+    background-color: #108a38;
+}
+.GameText {
+    background-color: #c5c5c5;
+    margin: 5px;
+}
+
+.FlexRow {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+.PlayerSide, .ComputerSide {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 3;
+    margin: 20px;
+}
+
+.FlexBreak {    
+    display: flex;
+    flex-basis: 100%;
+}
