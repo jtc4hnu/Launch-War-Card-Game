@@ -3,11 +3,13 @@ import './wargame.css';
 
 import { images, cardback } from "./imagesImport.js";
 
+//I did not see too great a need for making subcomponents - most of what I accomplished was in functionality in these functions.
 class Game extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            autoplay: false,
             gameActive: false,
             wins: 0,
             losses: 0,
@@ -167,8 +169,8 @@ class Game extends Component {
             computerDraws: computerDraws
         })
 
-        if (this.state.gameActive)
-            this.FlipCard();
+        if (this.state.gameActive && this.state.autoplay)
+            setTimeout(this.FlipCard, 500);
     }
 
     //Function to Retrieve the Text Identification of Each Card
@@ -211,6 +213,7 @@ class Game extends Component {
         return `${value} of ${suit}`
     }
 
+    //Function to compare the result of a draw
     CompareCards(card1, card2) {
         let a = Math.floor(card1 % 13);
         if (a === 0) a = 14;
@@ -229,6 +232,7 @@ class Game extends Component {
         return (
             <div className="CardGame-War">
                 <button onClick={this.SetUpGame}>Start Game!</button>
+                <button onClick={() => { this.setState({ autoplay: !this.state.autoplay }, this.FlipCard) }}>Toggle AutoPlay</button>
 
                 <div className="FlexRow">
                     <h2>Games Won: {this.state.wins}</h2>

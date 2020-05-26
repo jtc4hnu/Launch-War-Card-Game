@@ -1,6 +1,6 @@
 //Please tell me there's a better way to do this
 
-// Importing ona higher level is not supported
+// Importing on higher level is not supported
 // let images = []
 // for (let i = 1; i < 55; i++) {
 //     import image from `./Cards/${i}.gif`;
